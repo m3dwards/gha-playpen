@@ -31,8 +31,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Use annotation value
-        run: echo "Building with value: ${{ needs.annotate.outputs.my_value }}"
-
+        run: echo "Building with value ${{ needs.annotate.outputs.my_value }}"
+        
   # --- Step 3: Another downstream job ---
   test:
     name: Test
@@ -40,4 +40,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Use annotation value
-        run: echo "Testing with value: ${{ needs.annotate.outputs.my_value }}"
+        run: echo "Testing with value ${{ needs.annotate.outputs.my_value }}"
