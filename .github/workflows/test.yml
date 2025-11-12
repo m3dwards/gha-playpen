@@ -32,6 +32,8 @@ jobs:
     steps:
       - name: Use annotation value
         run: echo "Building with value ${{ needs.annotate.outputs.my_value }}"
+      - name: Write to job summary
+        run: "echo '### My annotation: ✅ value=42' >> $GITHUB_STEP_SUMMARY"
         
   # --- Step 3: Another downstream job ---
   test:
